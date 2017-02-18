@@ -1,0 +1,8 @@
+Query Examples
+browser url = localhost:4000/graphql
+
+{
+  user(id: "23") {
+    firstName
+  }
+}
