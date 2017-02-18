@@ -1,6 +1,15 @@
 {
   "users": [
-    {"id": "23", "firstName": "Bill", "age": 44},
-      { "id": "66", "firstName": "Karen", "age": 33}
+    {"id": "23", "firstName": "Arthur", "age": 35, "companyId": "1"},
+    {"id": "42", "firstName": "Ford", "age": 99, "companyId": "2"},
+      { "id": "66", "firstName": "Trillian", "age": 30, "companyId": "2"}
   ]
+}
+
+{
+  "companies": [
+    { "id": "1", "name": "Pineapple", "description": "fruit"},
+    { "id": "2", "name": "Googol", "description": "math"}
+    ]
+
 }
