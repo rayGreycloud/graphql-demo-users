@@ -12,7 +12,8 @@ const {
 //
 const CompanyType = new GraphQLObjectType({
   name: 'Company',
-  fields: {
+  // Refactor to arrow function to resolve circular reference with UserType
+  fields: () => ({
     id: { type: GraphQLString },
     name: { type: GraphQLString },
     description: { type: GraphQLString },
@@ -24,13 +25,12 @@ const CompanyType = new GraphQLObjectType({
           .then(res => res.data);
       }
     }
-  }
+  })
 });
 
-// Define graphql user type
 const UserType = new GraphQLObjectType({
   name: 'User',
-  fields: {
+  fields: () => ({
     id: { type: GraphQLString },
     firstName: { type: GraphQLString },
     age: { type: GraphQLInt },
@@ -41,7 +41,7 @@ const UserType = new GraphQLObjectType({
           .then(res => res.data);
       }
     }
-  }
+  })
 });
 
 // Needed to tell graphql what to grab
