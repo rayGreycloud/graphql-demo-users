@@ -6,3 +6,43 @@ browser url = localhost:4000/graphql
     firstName
   }
 }
+
+// naming queries
+{
+  googol: company(id: "2") {
+    name
+    id
+    description
+    users {
+      firstName
+      id
+      age
+    }
+  },
+   pineapple: company(id: "1") {
+    name
+    id
+    description
+    users {
+      firstName
+      id
+      age
+    }
+  }
+}
+
+// Utilizing query fragments
+{
+  googol: company(id: "2") {
+    ...companyDetails
+  },
+   pineapple: company(id: "1") {
+    ...companyDetails
+  }
+}
+
+fragment companyDetails on Company {
+  id
+  name
+  description
+}
