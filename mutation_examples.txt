@@ -1,8 +1,26 @@
 // Adds new user and requests return of id, firstName and age of created user
+// Note id is auto created
 mutation {
  addUser(firstName: "Zaphod", age: 242) {
    id
    firstName
    age
  }
+}
+
+// Deletes record created above
+mutation {
+ deleteUser(id: "HyPEO5ute") {
+   id
+ }
+}
+
+// Edits record and return id, name, age
+mutation {
+  editUser(id: "42", age: 33) {
+    id
+    firstName
+    age
+
+  }
 }
