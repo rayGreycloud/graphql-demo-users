@@ -1,0 +1,8 @@
+// Adds new user and requests return of id, firstName and age of created user
+mutation {
+ addUser(firstName: "Zaphod", age: 242) {
+   id
+   firstName
+   age
+ }
+}
