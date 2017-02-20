@@ -10,7 +10,6 @@ const {
   GraphQLNonNull
 } = graphql;
 
-//
 const CompanyType = new GraphQLObjectType({
   name: 'Company',
   // Refactor to arrow function to resolve circular reference with UserType
@@ -104,6 +103,7 @@ const mutation = new GraphQLObjectType({
         companyId: { type: GraphQLString }
       },
       resolve(parentValue, args) {
+        // Using Patch because Put overwrites all fields
         return axios.patch(`http://localhost:3000/users/${args.id}`, args)
           .then(res => res.data);
       }
